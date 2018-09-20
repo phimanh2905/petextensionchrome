@@ -1,0 +1,31 @@
+{
+  "name": "Dog gif from Phi Hong Manh",
+  "description": "Create by Phi Hong Manh",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "image/Dog-icon.png",
+    "default_popup": "background.html"
+  },
+
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "http://*/*",
+    "https://*/*",
+    "storage"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "css": [
+      "popup.css"
+    ],
+    "run_at": "document_end"
+  }]
+}
